@@ -1,0 +1,16 @@
+.main-container {
+  text-align: center;
+  margin-top: 100px;
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+.main-container h1 {
+  font-size: 2.5rem;
+  color: #007acc;
+}
+
+.main-container p {
+  font-size: 1.2rem;
+  margin: 10px 0;
+}

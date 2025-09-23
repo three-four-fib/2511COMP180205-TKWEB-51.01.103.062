@@ -1,0 +1,16 @@
+.portfolio-container {
+  text-align: center;
+  margin-top: 80px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #222;
+}
+
+.portfolio-container h1 {
+  font-size: 2rem;
+  color: #ff6600;
+}
+
+.portfolio-container p {
+  font-size: 1.1rem;
+  margin: 8px 0;
+}

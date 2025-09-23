@@ -1,23 +1,29 @@
 import React from "react";
-import Header from "./components/Header";
-import Hero from "./components/Hero";
-import About from "./components/About";
-import Projects from "./components/Projects";
-import Contact from "./components/Contact";
-import Footer from "./components/Footer";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
-function App()
-{
-  return(
-    <div>
+import Header from "./components/Header";
+import About from "./components/About";
+import Footer from "./components/Footer";
+import Group from "./pages/MainPage";
+import Member1 from "./pages/Member1";
+
+function App() {
+  return (
+    <Router>
       <Header />
-      <div style={{ display: "flex", flexDirection: "row", overflowX: "auto" }}>
-        <About />
-        <Projects />
-        <Contact />
-      </div>
+
+      <Routes>
+        {/* Home route (your current layout) */}
+
+        {/* Group page */}
+        <Route path="/group" element={<Group />} />
+
+        {/* Member 1 page */}
+        <Route path="/member1" element={<Member1 />} />
+      </Routes>
+
       <Footer />
-    </div>
+    </Router>
   );
 }
 
