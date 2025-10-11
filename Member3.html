@@ -1,0 +1,123 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Member x</title>
+  <link rel="stylesheet" href="Member3.css">
+</head>
+<body>
+  <div class="portfolio-wrapper">
+    
+    <!-- Intro Section -->
+    <section class="intro-section" align="center">
+      <img src="https://kynguyenlamdep.com/wp-content/uploads/2022/08/avatar-nu-giau-mat-ngau-chat.jpg" 
+           alt="Profile" class="avatar">
+      <h1>Truc Khanh</h1>
+      <h4 >Freshman | Future IT Educator</h4>
+      <p class="intro-text">Currently <b>18</b> years old — learning, growing, and coding every day.</p>
+    </section>
+
+    <!-- Profile Section -->
+    <section class="profile-section">
+      <h2 class="heading-2">Who Am I?</h2>
+      <p>
+        Hi there, my name is <b>Truc Khanh</b>. I'm a first-year student passionate about combining 
+        <i>technology</i> and <i>education</i>.
+      </p>
+      
+    </section>
+
+    <!-- Interests -->
+    <section class="interests-section">
+      <h2 class="heading-2"> Hobbies & Interests</h2>
+      <ul class="interests-list">
+        <li>📷 Photography</li>
+        <li>♟ Chess</li>
+        <li>📚 Reading</li>
+        
+        <li>🎬 Watching Movies</li>
+        <li>🎮 Gaming</li>
+        <li>🎵 Music</li>
+      </ul>
+    </section>
+
+    <!-- Study Plan -->
+    <section class="plan-section">
+      <h2 class="heading-2">4-Year Study Plan</h2>
+      <table class="plan-table" border="1" cellpadding="10">
+        <thead>
+          <tr>
+            <th>Year</th>
+            <th>Focus</th>
+            <th>Main Courses</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Year 1</td>
+            <td>Foundations</td>
+            <td>Programming Basics, Math, Educational Psychology</td>
+          </tr>
+          <tr>
+            <td>Year 2</td>
+            <td>Core Knowledge</td>
+            <td>Data Structures, Algorithms, Database Systems</td>
+          </tr>
+          <tr>
+            <td>Year 3</td>
+            <td>Advanced Learning</td>
+            <td>Web Development, AI Basics, Teaching Methods</td>
+          </tr>
+          <tr>
+            <td>Year 4</td>
+            <td>Practice & Research</td>
+            <td>Internship, Education Technology</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Goals -->
+    <section class="targets-section">
+      <h2 class="heading-2">Future Aspirations</h2>
+      <ol class="targets-list" style="
+      margin-bottom: 12px; 
+      line-height: 1.6;">
+        <li><b>Develop Skills</b> — master full-stack development.</li>
+        <li><b>Contribute</b> — join open-source projects.</li>
+        <li><b>Teach</b> — create tutorials.</li>
+        <li><b>Research</b> — AI in education.</li>
+        <li><b>Balance</b> — healthy lifestyle .</li>
+      </ol>
+    </section>
+
+    <!-- Contact -->
+    <section class="contact-section">
+      <h2 class="heading-2">Contact Me</h2>
+      <form class="contact-form" onsubmit="handleSubmit(event)">
+        <div class="form-field">
+          <label>Your Name</label>
+          <input type="text" placeholder="Full name" required>
+        </div>
+        <div class="form-field">
+          <label>Email</label>
+          <input type="email" placeholder="your@email.com" required>
+        </div>
+        <div class="form-field">
+          <label>Message</label>
+          <textarea placeholder="Say hello..." required></textarea>
+        </div>
+        <button type="submit" class="btn-submit">🚀 Send</button>
+      </form>
+    </section>
+
+  </div>
+
+  <script>
+    function handleSubmit(e) {
+      e.preventDefault();
+      alert("📩 Your message has been sent!");
+    }
+  </script>
+</body>
+</html>
