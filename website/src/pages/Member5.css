@@ -1,0 +1,17 @@
+/* Member5.css - Add your styles here */
+
+.member-container {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.member-container h1 {
+  color: #333;
+  text-align: center;
+}
+
+.member-container p {
+  text-align: center;
+  color: #666;
+}

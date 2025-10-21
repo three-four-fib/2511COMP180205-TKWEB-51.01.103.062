@@ -1,0 +1,28 @@
+:root {
+  /* Core palette (always used) */
+  --color-bg: #fefcff;                 /* Deep neutral base */
+  --color-text: #111112;               /* Primary text */
+
+  /* Fusion pinks */
+  --color-primary: #fde7f1;            /* Fusion Pink */
+
+  /* Default glowing effects */
+  --color-primary-glow: rgba(255, 84, 166, 0.10);
+  --color-accent-glow: rgba(56, 189, 248, 0.08);
+}
+
+/* 2) Modern Reset */
+* { box-sizing: border-box; }
+
+/* 3) Premium Background */
+html { scroll-behavior: smooth; }
+body {
+  background:
+    radial-gradient(1100px 700px at 12% -8%, var(--color-primary-glow), transparent 60%),
+    radial-gradient(900px 600px at 88% -6%, var(--color-accent-glow), transparent 58%),
+    linear-gradient(180deg, rgba(255, 84, 166, 0.02), rgba(56, 189, 248, 0.02)),
+    var(--color-bg);
+
+  background-repeat: no-repeat;
+  background-size: cover;
+}

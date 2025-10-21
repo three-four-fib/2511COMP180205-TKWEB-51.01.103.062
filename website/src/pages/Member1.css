@@ -1,0 +1,147 @@
+/* ========== General Styles ========== */
+.portfolio-container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 2rem;
+}
+
+.profile-image {
+  height: 160px;
+  border-radius: 50%;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+  margin-bottom: 1rem;
+}
+
+.hero-section h1 {
+  font-size: 2.5rem;
+  color: rgb(156, 52, 69);
+  margin: 0.5rem 0;
+}
+
+h2{
+  color: rgb(156, 52, 69);
+}
+
+/* ========== Section Titles ========== */
+section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  border-left: 6px solid rgb(156, 52, 69);
+  padding-left: 20px;
+}
+
+/* ========== About Section ========== */
+.about-content p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.about-section h2 {
+  color: rgb(156, 52, 69);
+}
+
+/* ========== Hobbies Section ========== */
+.hobbies-section h2{
+  color: rgb(156, 52, 69);
+}
+
+.hobbies-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+}
+
+.hobbies-list li {
+  padding: 1rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  transition: transform 0.2s;
+}
+
+.hobbies-list li:hover {
+  transform: translateY(-5px);
+  background: rgb(255, 255, 255)
+}
+
+/* ========== Schedule Table ========== */
+.schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+}
+
+.schedule-table td {
+  padding: 12px;
+  text-align: center;
+}
+
+.schedule-table th {
+  background: rgb(234, 221, 223);
+  color: rgb(75, 28, 28);
+  font-weight: 600;
+}
+
+.schedule-table td:hover {
+  background: rgba(219, 214, 214, 0.538);
+}
+
+/* ========== Goals Section ========== */
+.goals-list li {
+  margin-bottom: 1rem;
+}
+
+.goals-list b {
+  color: rgb(128, 80, 88);
+}
+
+/* ========== Contact Section ========== */
+.contact-form {
+  background: white;
+  padding: 3%;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 5%;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 1%;
+  color: rgb(128, 80, 88);
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 2%;
+  border-radius: 10px;
+  border: 0px;
+  background: rgb(246, 244, 246);
+}
+
+
+.submit-btn {
+  background: rgb(247, 224, 228);
+  color: #0d0b10;
+  padding: 3% 5%;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.submit-btn:hover {
+  opacity: 0.80;
+  transform: translateY(-3px);
+}

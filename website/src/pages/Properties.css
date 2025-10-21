@@ -1,0 +1,47 @@
+
+.properties-container {
+  text-align: center;
+}
+
+.properties-title {
+  color: rgb(98, 73, 77);
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.properties-subtitle {
+  color: rgba(77, 54, 54, 0.9);
+  font-size: 1.3rem;
+  margin-bottom: 70px;
+}
+
+.properties-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  scale: 95%;
+}
+
+.properties-item {
+  border-radius: 15px;
+  padding: 20px;
+  /* solid card background instead of glass blur */
+  background: #ffffff;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  height: 300px;
+  width: 100%;
+  max-width: 800px;
+  margin: 2% 0;
+}
+
+.properties-item-chase {
+  /* solid card background instead of translucent glass */
+  background: #ffffff;
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  height: 600px;
+  width: 100%;
+  max-width: 800px;
+  margin: 2% 0;
+}

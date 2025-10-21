@@ -1,0 +1,39 @@
+
+.about{
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: left;
+    padding: 24px 16px;
+    line-height: 1.6;
+}
+
+.react-facts {
+    background: linear-gradient(135deg, #d7d8d8, #eae9e9);
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px 0;
+    border-left: 4px solid #525151;
+}
+
+.react-facts ul {
+    list-style: none;
+    padding: 0;
+}
+
+.react-facts li {
+    margin-bottom: 15px;
+    padding: 10px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease;
+}
+
+.react-facts li:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.react-facts strong {
+    color: #2c3e50;
+}
