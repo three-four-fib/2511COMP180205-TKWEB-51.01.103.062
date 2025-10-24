@@ -1,0 +1,81 @@
+
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+}
+
+.add-product-section, .products-section {
+    margin-bottom: 30px;
+}
+
+.products-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.product-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #ccc;
+    padding: 10px 15px;
+    border-radius: 8px;
+    background: #f8f8f8;
+}
+
+.product-name {
+    flex: 1;
+    font-weight: bold;
+}
+
+.actions button {
+    margin-left: 10px;
+    cursor: pointer;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+.edit-btn {
+    background-color: #f9c74f;
+}
+
+.delete-btn {
+    background-color: #f94144;
+    color: white;
+}
+
+button{
+    padding: 15px 30px;
+    background: rgb(29, 99, 15); 
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.add-product-section {
+    padding: 30px;
+    background: #f8f9fa;
+    border-bottom: 1px solid #e9ecef;
+}
+
+#productForm {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    padding-right:300px;
+}
+
+#productName {
+    flex: 1;
+    padding: 15px;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}

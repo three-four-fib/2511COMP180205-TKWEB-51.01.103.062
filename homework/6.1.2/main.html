@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Halloween Invitation 🎃</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* === Reset and background setup === */
+    body {
+      margin: 0;
+      height: 100vh;
+      overflow: hidden;
+      color: #fff;
+      font-family: 'Trebuchet MS', sans-serif;
+      text-align: center;
+    }
+
+    /* === Header and Navigation === */
+    nav {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 10px 0;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    nav a {
+      color: #ff7518;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #fff;
+    }
+
+    /* === Main content === */
+    .container {
+      margin-top: 100px;
+      animation: floatText 3s ease-in-out infinite alternate;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      text-shadow: 0 0 20px #ff7518, 0 0 40px #ff4500;
+      animation: flicker 2s infinite alternate;
+    }
+
+    p {
+      font-size: 1.2em;
+    }
+
+    /* === Floating ghosts animation === */
+    .ghost {
+      position: absolute;
+      width: 100px;
+      opacity: 0.7;
+      animation: floatGhost 6s ease-in-out infinite;
+    }
+
+    .ghost:nth-of-type(1) {
+      top: 20%;
+      left: 10%;
+      animation-delay: 0s;
+    }
+
+    .ghost:nth-of-type(2) {
+      top: 40%;
+      left: 80%;
+      animation-delay: 2s;
+    }
+
+    .ghost:nth-of-type(3) {
+      top: 70%;
+      left: 30%;
+      animation-delay: 4s;
+    }
+
+
+    @keyframes floatGhost {
+      0% { transform: translateY(0) scale(1); opacity: 0.8; }
+      50% { transform: translateY(-20px) scale(1.1); opacity: 1; }
+      100% { transform: translateY(0) scale(1); opacity: 0.8; }
+    }
+
+    /* === Text flicker animation === */
+    @keyframes flicker {
+      0%, 18%, 22%, 25%, 53%, 57%, 100% {
+        opacity: 1;
+      }
+      20%, 24%, 55% {
+        opacity: 0.4;
+      }
+    }
+
+    /* === Floating text === */
+    @keyframes floatText {
+      0% { transform: translateY(0px); }
+      100% { transform: translateY(-15px); }
+    }
+
+    /* === Falling pumpkins === */
+    .pumpkin {
+      position: absolute;
+      width: 50px;
+      animation: fallPumpkin 8s linear infinite;
+      opacity: 0.9;
+    }
+
+    .pumpkin:nth-child(4) { left: 10%; animation-delay: 0s; }
+    .pumpkin:nth-child(5) { left: 40%; animation-delay: 2s; }
+    .pumpkin:nth-child(6) { left: 70%; animation-delay: 4s; }
+
+    @keyframes fallPumpkin {
+      0% { top: -10%; transform: rotate(0deg); }
+      100% { top: 110%; transform: rotate(360deg); }
+    }
+
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <a href="main.html">Home</a>
+      <a href="history.html">History</a>
+      <a href="products.html">Foods</a>
+      <a href="pictures.html">Pictures</a>
+      <a href="contact.html">Contact</a>
+      <a href="invitation.html">Invitation</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h1>🎃 Welcome to Our Halloween Party! 🎃</h1>
+    <p>Join us for a spooky night full of fun, food, and fright!</p>
+    <p><b>Date:</b> October 31st</p>
+    <p><b>Location:</b> 13 Haunted Street, Pumpkin Town</p>
+    <p>Click the <b>Invitation</b> tab to accept your invitation and join the scare!</p>
+  </div>
+
+  <!-- Animated ghosts -->
+  <img src="scary.png" class="ghost" alt="Ghost">
+  <img src="scary.png" class="ghost" alt="Ghost">
+  <img src="scary.png" class="ghost" alt="Ghost">
+
+  <!-- Falling pumpkins -->
+  <img src="pumpkin.png" class="pumpkin" alt="Pumpkin">
+  <img src="pumpkin.png" class="pumpkin" alt="Pumpkin">
+  <img src="pumpkin.png" class="pumpkin" alt="Pumpkin">
+
+  <!-- Background music -->
+  <audio id="bg-music" loop hidden>
+    <source src="halloween.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    const audio = document.getElementById("bg-music");
+
+    window.addEventListener("load", () => {
+      audio.play().catch(() => {
+        console.log("Autoplay blocked. Waiting for user interaction...");
+      });
+    });
+
+    document.addEventListener("click", () => {
+      if (audio.paused) {
+        audio.play();
+      }
+    });
+  </script>
+</body>
+</html>

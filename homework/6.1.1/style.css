@@ -1,0 +1,69 @@
+body {
+  margin: 0;
+  overflow: hidden;
+}
+
+.lake {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: url("ocean.jpg") no-repeat center center / cover;
+  overflow: hidden;
+}
+
+
+/* === Diver swims up and down === */
+.diver {
+  position: absolute;
+  left: 10%;
+  width: 350px;
+  animation: diverSwim 5s ease-in-out infinite alternate;
+}
+
+@keyframes diverSwim {
+  0%   { top: 20%; transform: rotate(10deg); }
+  100% { top: 70%; transform: rotate(-10deg); }
+}
+
+/* === Shark swims left → right and back === */
+.shark {
+  position: absolute;
+  bottom: 25%;
+  width: 400px;
+  animation: sharkSwim 8s linear infinite alternate;
+}
+
+@keyframes sharkSwim {
+  0%   { left: 0%; transform: scaleX(1); }
+  100% { left: 80%; transform: scaleX(-1); }
+}
+
+/* === Turtle swims left → right and back === */
+.turtle {
+  position: absolute;
+  bottom: 50%;
+  width: 200px;
+  animation: turtleSwim 10s linear infinite alternate;
+}
+
+@keyframes turtleSwim {
+  0%   { left: 10%; transform: scaleX(1); }
+  100% { left: 75%; transform: scaleX(-1); }
+}
+
+/* Optional fun effect: water bubbles */
+.lake::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(white 2px, transparent 2px);
+  background-size: 30px 30px;
+  opacity: 0.1;
+  animation: bubbles 6s linear infinite;
+}
+
+@keyframes bubbles {
+  from { background-position: 0 0; }
+  to { background-position: 0 -60px; }
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản Lý Sản Phẩm</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div>
+        <h2>Add New Product</h2>
+        <!-- Add New Product Form -->
+        <div class="add-product-section">
+            <form id="productForm">
+                <input type="text" id="productName" placeholder="Nhập tên sản phẩm" required>
+                <button type="submit">Add</button>
+            </form>
+        </div>
+
+        <!-- Products List -->
+        <div class="products-section">
+            <h2>Danh Sách Sản Phẩm</h2>
+            <div id="productsList" class="products-grid"></div>
+        </div>
+    </div>
+
+    <script>
+        const productForm = document.getElementById("productForm");
+        const productNameInput = document.getElementById("productName");
+        const productsList = document.getElementById("productsList");
+
+        // Handle add new product
+        productForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+            const name = productNameInput.value.trim();
+            if (name === "") return alert("Vui lòng nhập tên sản phẩm!");
+
+            addProduct(name);
+            productNameInput.value = "";
+        });
+
+        // Add function
+        function addProduct(name) {
+            const card = document.createElement("div");
+            card.className = "product-card";
+
+            const nameEl = document.createElement("span");
+            nameEl.className = "product-name";
+            nameEl.textContent = name;
+
+            const actions = document.createElement("div");
+            actions.className = "actions";
+
+            const editBtn = document.createElement("button");
+            editBtn.className = "edit-btn";
+            editBtn.textContent = "Edit";
+            editBtn.addEventListener("click", () => editProduct(nameEl));
+
+            const deleteBtn = document.createElement("button");
+            deleteBtn.className = "delete-btn";
+            deleteBtn.textContent = "Delete";
+            deleteBtn.addEventListener("click", () => deleteProduct(card));
+
+            actions.appendChild(editBtn);
+            actions.appendChild(deleteBtn);
+
+            card.appendChild(nameEl);
+            card.appendChild(actions);
+
+            productsList.appendChild(card);
+        }
+
+        // Delete function
+        function deleteProduct(card) {
+            if (confirm("Bạn có chắc muốn xóa sản phẩm này?")) {
+                card.remove();
+            }
+        }
+
+        // Edit function
+        function editProduct(nameEl) {
+            const currentName = nameEl.textContent;
+            const newName = prompt("Nhập tên sản phẩm mới:", currentName);
+            if (newName && newName.trim() !== "") {
+                nameEl.textContent = newName.trim();
+            }
+        }
+    </script>
+</body>
+</html>

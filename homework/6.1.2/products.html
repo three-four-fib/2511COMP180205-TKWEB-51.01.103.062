@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Halloween Foods</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="main.html">Home</a>
+      <a href="history.html">History</a>
+      <a href="products.html">Foods</a>
+      <a href="pictures.html">Pictures</a>
+      <a href="contact.html">Contact</a>
+      <a href="invitation.html">Invitation</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h1>🧁 Halloween Foods 🍭</h1>
+    <ul id="food-list"></ul>
+    <button id="showFoods">Show Foods</button>
+  </div>
+
+  <script>
+    $(document).ready(function() {
+      const foods = ["Pumpkin Pie", "Candy Apples", "Witch Fingers Cookies", "Caramel Popcorn", "Spider Cupcakes"];
+      $("#showFoods").click(function() {
+        $("#food-list").empty();
+        $.each(foods, function(i, item) {
+          $("#food-list").append("<li>🕸️ " + item + "</li>");
+        });
+      });
+    });
+  </script>
+
+   <audio id="bg-music" loop hidden>
+    <source src="halloween.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    const audio = document.getElementById("bg-music");
+
+    // Try to autoplay when the page loads
+    window.addEventListener("load", () => {
+      audio.play().catch(() => {
+        console.log("Autoplay blocked. Waiting for user interaction...");
+      });
+    });
+
+    // Play once the user clicks anywhere
+    document.addEventListener("click", () => {
+      if (audio.paused) {
+        audio.play();
+        console.log("Audio started after user click.");
+      }
+    });
+  </script>
+</body>
+</html>

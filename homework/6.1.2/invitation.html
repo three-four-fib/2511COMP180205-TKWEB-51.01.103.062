@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Halloween Invitation</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="main.html">Home</a>
+      <a href="history.html">History</a>
+      <a href="products.html">Foods</a>
+      <a href="pictures.html">Pictures</a>
+      <a href="contact.html">Contact</a>
+      <a href="invitation.html">Invitation</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h1> 🎃 You’re Invited to the Spookiest Night! 🎃</h1>
+    <p>Click below to accept your invitation and prepare for a thrilling night!</p>
+    <button onclick="alert('You’re officially invited! See you at the party!')">Accept Invitation</button>
+  </div>
+
+   <audio id="bg-music" loop hidden>
+    <source src="halloween.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    const audio = document.getElementById("bg-music");
+
+    // Try to autoplay when the page loads
+    window.addEventListener("load", () => {
+      audio.play().catch(() => {
+        console.log("Autoplay blocked. Waiting for user interaction...");
+      });
+    });
+
+    // Play once the user clicks anywhere
+    document.addEventListener("click", () => {
+      if (audio.paused) {
+        audio.play();
+        console.log("Audio started after user click.");
+      }
+    });
+  </script>
+  
+</body>
+</html>

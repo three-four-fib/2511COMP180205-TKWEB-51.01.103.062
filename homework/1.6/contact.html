@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liên Hệ - Trang Cá Nhân Của Tôi</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="main.html" class="nav-link">Trang Chủ</a>
+            <a href="study-schedule.html" class="nav-link">Lịch Học</a>
+            <a href="hobbies.html" class="nav-link">Sở Thích</a>
+            <a href="contact.html" class="nav-link active">Liên Hệ</a>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <div class="container">
+            <header class="page-header">
+                <h1>Liên Hệ Với Em</h1>
+                <p>Hãy liên hệ với em!</p>
+            </header>
+
+            <section class="contact-section">
+                <div class="contact-container">
+
+                    <div class="contact-form-container">
+                        <div class="info-card">
+                            <h2>Gửi Tin Nhắn Cho Em</h2>
+                            <form class="contact-form">
+                                <div class="form-group">
+                                    <label for="name">Họ và Tên *</label>
+                                    <input type="text" id="name" name="name" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="email">Địa Chỉ Email *</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="phone">Số Điện Thoại</label>
+                                    <input type="tel" id="phone" name="phone">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="subject">Chủ Đề *</label>
+                                    <select id="subject" name="subject" required>
+                                        <option value="">Chọn chủ đề</option>
+                                        <option value="general">Câu hỏi chung</option>
+                                        <option value="study">Liên quan đến học tập</option>
+                                        <option value="hobby">Thảo luận sở thích</option>
+                                        <option value="collaboration">Hợp tác</option>
+                                        <option value="other">Khác</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="message">Tin Nhắn *</label>
+                                    <textarea id="message" name="message" rows="6" placeholder="Hãy cho biết bạn đang nghĩ gì..."></textarea>
+                                </div>
+
+                                <div class="form-group checkbox-group">
+                                    <input type="checkbox" id="newsletter" name="newsletter">
+                                    <label for="newsletter">Đăng ký nhận cập nhật của em (tùy chọn)</label>
+                                </div>
+
+                                <button type="submit" class="submit-btn">Gửi Tin Nhắn</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="social-section">
+                <div class="info-card">
+                    <h2>Theo Dõi Em</h2>
+                    <p>Kết nối với tôi trên mạng xã hội để nhận thêm cập nhật và nội dung!</p>
+                    <div class="social-links">
+                        <a class="social-link facebook">📘 Facebook</a>
+                        <a class="social-link instagram">📷 Instagram</a>
+                        <a class="social-link twitter">🐦 Twitter</a>
+                        <a class="social-link linkedin">💼 LinkedIn</a>
+                        <a class="social-link github">💻 GitHub</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 Trang Cá Nhân Của Em. Tất cả quyền được bảo lưu.</p>
+    </footer>
+
+    <script>
+        // Simple form handling
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Show success message (in a real application, this would send the data to a server)
+            alert('Cảm ơn đã gửi tin nhắn! Em sẽ phản hồi lại sớm.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
