@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destination Details - TravelEase</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/destination.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2><a href="../index.html" style="text-decoration: none; color: inherit;">TravelEase</a></h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../search/search.html">Search</a></li>
+                <li><a href="../blog/blog.html">Travel Guides</a></li>
+                <li><a href="../contact/contact.html">Contact</a></li>
+                <li><a href="../history/history.html">History</a></li>
+                <li><a href="../cart/cart.html" class="cart-link">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Destination Header -->
+    <section class="destination-header">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a>
+                <span>/</span>
+                <a href="../search/search.html">Search</a>
+                <span>/</span>
+                <span id="destination-name">Destination</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Gallery -->
+    <section class="photo-gallery">
+        <div class="container">
+            <div class="gallery-container">
+                <div class="main-image" id="main-image-container">
+                    <img id="main-image" src="" alt="Main destination image">
+                    <button class="swipe-nav prev" id="prev-btn" onclick="previousImage()">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="swipe-nav next" id="next-btn" onclick="nextImage()">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                    <div class="swipe-indicators" id="swipe-indicators">
+                        <!-- Indicators will be generated here -->
+                    </div>
+                </div>
+                <div class="thumbnail-grid" id="thumbnail-grid">
+                    <!-- Thumbnails will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Destination Info -->
+    <section class="destination-info">
+        <div class="container">
+            <div class="info-grid">
+                <div class="main-info">
+                    <div class="destination-title">
+                        <h1 id="destination-title">Destination Name</h1>
+                        <div class="rating-location">
+                            <div class="rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span id="rating-score">4.8</span>
+                                <span class="review-count">(127 reviews)</span>
+                            </div>
+                            <div class="location">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <span id="destination-location">Location</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="description">
+                        <h3>About This Destination</h3>
+                        <p id="destination-description">Description will be loaded here...</p>
+                    </div>
+
+                    <!-- Itinerary -->
+                    <div class="itinerary">
+                        <h3>Highlights</h3>
+                        <div class="highlights-list" id="highlights-list">
+                            <!-- Highlights will be loaded here -->
+                        </div>
+                    </div>
+
+                    <!-- Features -->
+                    <div class="features">
+                        <h3>What's Included</h3>
+                        <div class="features-grid" id="features-grid">
+                            <!-- Features will be loaded here -->
+                        </div>
+                    </div>
+
+                    <!-- Reviews -->
+                    <div class="reviews">
+                        <h3>Reviews</h3>
+                        <div class="reviews-summary">
+                            <div class="rating-breakdown">
+                                <div class="overall-rating">
+                                    <span class="rating-number" id="overall-rating">4.8</span>
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <span class="total-reviews">Based on 127 reviews</span>
+                                </div>
+                                <div class="rating-bars">
+                                    <div class="rating-bar">
+                                        <span>5</span>
+                                        <div class="bar">
+                                            <div class="fill" style="width: 80%"></div>
+                                        </div>
+                                        <span>102</span>
+                                    </div>
+                                    <div class="rating-bar">
+                                        <span>4</span>
+                                        <div class="bar">
+                                            <div class="fill" style="width: 15%"></div>
+                                        </div>
+                                        <span>19</span>
+                                    </div>
+                                    <div class="rating-bar">
+                                        <span>3</span>
+                                        <div class="bar">
+                                            <div class="fill" style="width: 3%"></div>
+                                        </div>
+                                        <span>4</span>
+                                    </div>
+                                    <div class="rating-bar">
+                                        <span>2</span>
+                                        <div class="bar">
+                                            <div class="fill" style="width: 1%"></div>
+                                        </div>
+                                        <span>1</span>
+                                    </div>
+                                    <div class="rating-bar">
+                                        <span>1</span>
+                                        <div class="bar">
+                                            <div class="fill" style="width: 1%"></div>
+                                        </div>
+                                        <span>1</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="reviews-list" id="reviews-list">
+                            <!-- Reviews will be loaded here -->
+                        </div>
+                    </div>
+
+                    <!-- FAQs -->
+                    <div class="faqs">
+                        <h3>Frequently Asked Questions</h3>
+                        <div class="faq-list" id="faq-list">
+                            <!-- FAQs will be loaded here -->
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Booking Sidebar -->
+                <div class="booking-sidebar">
+                    <div class="booking-card">
+                        <div class="price-section">
+                            <div class="price">
+                                <span class="current-price" id="booking-price">$1,200</span>
+                                <span class="original-price" id="original-price" style="display: none;">$1,500</span>
+                            </div>
+                            <div class="price-note">per person</div>
+                        </div>
+
+                        <div class="booking-form">
+                            <h4>Book Your Trip</h4>
+                            
+
+                            <div class="form-group">
+                                <label>Travelers</label>
+                                <div class="traveler-selector">
+                                    <button class="traveler-btn" onclick="changeTravelers(-1)">
+                                        <i class="fas fa-minus"></i>
+                                    </button>
+                                    <span id="traveler-count">1</span>
+                                    <button class="traveler-btn" onclick="changeTravelers(1)">
+                                        <i class="fas fa-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="availability">
+                                <div class="availability-status">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Available</span>
+                                </div>
+                                <div class="availability-note">Limited spots remaining</div>
+                            </div>
+
+                            <div class="booking-actions">
+                                <button class="btn btn-primary btn-large" onclick="addToCart()">
+                                    <i class="fas fa-shopping-cart"></i>
+                                    Add to Cart
+                                </button>
+                                <button class="btn btn-secondary btn-large" onclick="bookNow()">
+                                    <i class="fas fa-credit-card"></i>
+                                    Book Now
+                                </button>
+                            </div>
+
+                            <div class="booking-features">
+                                <div class="feature">
+                                    <i class="fas fa-shield-alt"></i>
+                                    <span>Free cancellation up to 24 hours</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-clock"></i>
+                                    <span>Instant confirmation</span>
+                                </div>
+                                <div class="feature">
+                                    <i class="fas fa-headset"></i>
+                                    <span>24/7 customer support</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Info -->
+                    <div class="contact-card">
+                        <h4>Need Help?</h4>
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <i class="fas fa-phone"></i>
+                                <span>+1 (555) 123-4567</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-envelope"></i>
+                                <span>support@travelease.com</span>
+                            </div>
+                            <div class="contact-item">
+                                <i class="fas fa-comments"></i>
+                                <span>Live Chat Available</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Packages -->
+    <section class="related-packages">
+        <div class="container">
+            <h2>You Might Also Like</h2>
+            <div class="related-grid" id="related-grid">
+                <!-- Related packages will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Modal -->
+    <div class="gallery-modal" id="gallery-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Photo Gallery</h3>
+                <button class="close-btn" onclick="closeGallery()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-gallery" id="modal-gallery">
+                <!-- Gallery images will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>TravelEase</h3>
+                    <p>Making travel dreams come true since 2020</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../search/search.html">Search</a></li>
+                        <li><a href="../blog/blog.html">Travel Guides</a></li>
+                        <li><a href="../contact/contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="../contact/contact.html">Help Center</a></li>
+                        <li><a href="../contact/contact.html">FAQ</a></li>
+                        <li><a href="../contact/contact.html">Terms of Service</a></li>
+                        <li><a href="../contact/contact.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 TravelEase. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/destination.js"></script>
+</body>
+</html>

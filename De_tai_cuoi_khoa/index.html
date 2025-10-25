@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelEase - Your Dream Destination Awaits</title>
+    <link rel="stylesheet" href="styles/main.css">
+
+    <!-- icon fonts -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>TravelEase</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="search/search.html">Search</a></li>
+                <li><a href="blog/blog.html">Travel Guides</a></li>
+                <li><a href="contact/contact.html">Contact</a></li>
+                <li><a href="history/history.html">History</a></li>
+                <li><a href="cart/cart.html" class="cart-link">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Discover Your Next Adventure</h1>
+            <p>Explore the world's most beautiful destinations with our curated travel experiences</p>
+            
+            <!-- Search Bar -->
+            <div class="search-container">
+                <div class="search-form">
+                    <div class="search-field">
+                        <i class="fas fa-globe"></i>
+                        <select id="continent-select" onchange="updateCountryOptions()">
+                            <option value="">Select Continent</option>
+                            <option value="Asia">Asia</option>
+                            <option value="Europe">Europe</option>
+                            <option value="Africa">Africa</option>
+                            <option value="North America">North America</option>
+                            <option value="South America">South America</option>
+                            <option value="Oceania">Oceania</option>
+                        </select>
+                    </div>
+                    
+                    <div class="search-field">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <select id="country-select" disabled>
+                            <option value="">Select Country</option>
+                        </select>
+                    </div>
+                    
+                    <button class="search-btn" onclick="performSearch()">
+                        <i class="fas fa-search"></i>
+                        Search
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Top Destinations -->
+    <section class="destinations">
+        <div class="container">
+            <h2>Top Destinations</h2>
+            <div class="destinations-grid" id="destinations-grid">
+                <!-- Destinations will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Offers -->
+    <section class="offers">
+        <div class="container">
+            <h2>Featured Offers</h2>
+            <div class="offers-grid" id="offers-grid">
+                <!-- Offers will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Book With Us -->
+    <section class="trust-section">
+        <div class="container">
+            <h2>Why Book With Us?</h2>
+            <div class="trust-badges">
+                <div class="trust-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Secure Booking</h3>
+                    <p>Your data and payments are protected with bank-level security</p>
+                </div>
+                <div class="trust-item">
+                    <i class="fas fa-clock"></i>
+                    <h3>24/7 Support</h3>
+                    <p>Round-the-clock customer service for all your travel needs</p>
+                </div>
+                <div class="trust-item">
+                    <i class="fas fa-star"></i>
+                    <h3>Best Price Guarantee</h3>
+                    <p>We match or beat any competitor's price</p>
+                </div>
+                <div class="trust-item">
+                    <i class="fas fa-plane"></i>
+                    <h3>Trusted Partners</h3>
+                    <p>Working with the world's leading airlines and hotels</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <h2>What Our Travelers Say</h2>
+            <div class="testimonials-grid" id="testimonials-grid">
+                <!-- Testimonials will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-content">
+                <h2>Stay Updated with Travel Deals</h2>
+                <p>Get exclusive offers and travel tips delivered to your inbox</p>
+                <form class="newsletter-form" id="newsletter-form">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>TravelEase</h3>
+                    <p>Making travel dreams come true since 2020</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="search/search.html">Search</a></li>
+                        <li><a href="blog/blog.html">Travel Guides</a></li>
+                        <li><a href="contact/contact.html">Contact</a></li>
+                        <li><a href="history/history.html">History</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="contact/contact.html">Help Center</a></li>
+                        <li><a href="contact/contact.html">FAQ</a></li>
+                        <li><a href="contact/contact.html">Terms of Service</a></li>
+                        <li><a href="contact/contact.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 TravelEase. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/home.js"></script>
+</body>
+</html>

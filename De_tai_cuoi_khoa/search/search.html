@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results - TravelEase</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/search.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2><a href="../index.html" style="text-decoration: none; color: inherit;">TravelEase</a></h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="search.html" class="active">Search</a></li>
+                <li><a href="../blog/blog.html">Travel Guides</a></li>
+                <li><a href="../contact/contact.html">Contact</a></li>
+                <li><a href="../history/history.html">History</a></li>
+                <li><a href="../cart/cart.html" class="cart-link">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Search Section -->
+    <section class="search-section">
+        <div class="container">
+            <div class="search-header">
+                <h1>Find Your Perfect Trip</h1>
+                <p>Discover amazing destinations and book your next adventure</p>
+            </div>
+            
+            <!-- Search Filters -->
+            <div class="search-filters">
+                <div class="filter-group">
+                    <label>Continent</label>
+                    <select id="continent-filter" onchange="updateCountryFilter()">
+                        <option value="">All Continents</option>
+                        <option value="Asia">Asia</option>
+                        <option value="Europe">Europe</option>
+                        <option value="Africa">Africa</option>
+                        <option value="North America">North America</option>
+                        <option value="South America">South America</option>
+                        <option value="Oceania">Oceania</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label>Country</label>
+                    <select id="country-filter" disabled>
+                        <option value="">All Countries</option>
+                    </select>
+                </div>
+                
+                <div class="filter-group">
+                    <label>Destination</label>
+                    <input type="text" id="destination-filter" placeholder="Search specific destination">
+                </div>
+                
+                <div class="filter-group">
+                    <label>Price Range</label>
+                    <select id="price-filter">
+                        <option value="">Any Price</option>
+                        <option value="0-500">Under $500</option>
+                        <option value="500-1000">$500 - $1000</option>
+                        <option value="1000-2000">$1000 - $2000</option>
+                        <option value="2000+">$2000+</option>
+                    </select>
+                </div>
+                
+                
+                <button class="filter-btn" onclick="applyFilters()">
+                    <i class="fas fa-filter"></i>
+                    Apply Filters
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section class="results-section">
+        <div class="container">
+            <div class="results-header">
+                <div class="results-info">
+                    <h2>Search Results</h2>
+                    <p id="results-count">Loading...</p>
+                </div>
+                
+                <div class="results-controls">
+                    <div class="view-toggle">
+                        <button class="view-btn active" onclick="toggleView('grid')">
+                            <i class="fas fa-th"></i>
+                        </button>
+                        <button class="view-btn" onclick="toggleView('list')">
+                            <i class="fas fa-list"></i>
+                        </button>
+                    </div>
+                    
+                    <div class="sort-controls">
+                        <label>Sort by:</label>
+                        <select id="sort-select" onchange="sortResults()">
+                            <option value="relevance">Relevance</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                            <option value="rating">Rating</option>
+                            <option value="duration">Duration</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            
+            
+            <!-- Results Grid/List -->
+            <div class="results-container" id="results-container">
+                <!-- Results will be loaded here -->
+            </div>
+            
+            <!-- Pagination -->
+            <div class="pagination" id="pagination">
+                <!-- Pagination will be generated here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>TravelEase</h3>
+                    <p>Making travel dreams come true since 2020</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="search.html">Search</a></li>
+                        <li><a href="../blog/blog.html">Travel Guides</a></li>
+                        <li><a href="../contact/contact.html">Contact</a></li>
+                        <li><a href="../history/history.html">History</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="../contact/contact.html">Help Center</a></li>
+                        <li><a href="../contact/contact.html">FAQ</a></li>
+                        <li><a href="../contact/contact.html">Terms of Service</a></li>
+                        <li><a href="../contact/contact.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 TravelEase. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/search.js"></script>
+</body>
+</html>

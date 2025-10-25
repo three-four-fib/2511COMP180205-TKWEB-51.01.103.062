@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Guides - TravelEase</title>
+    <link rel="stylesheet" href="../styles/main.css">
+    <link rel="stylesheet" href="../styles/blog.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2><a href="../index.html" style="text-decoration: none; color: inherit;">TravelEase</a></h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="../search/search.html">Search</a></li>
+                <li><a href="blog.html" class="active">Travel Guides</a></li>
+                <li><a href="../contact/contact.html">Contact</a></li>
+                <li><a href="../history/history.html">History</a></li>
+                <li><a href="../cart/cart.html" class="cart-link">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Blog Header -->
+    <section class="blog-header">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="../index.html">Home</a>
+                <span>/</span>
+                <span>Travel Guides</span>
+            </div>
+            <h1>Travel Guides & Tips</h1>
+            <p>Discover amazing destinations, travel tips, and cultural insights from our travel experts</p>
+        </div>
+    </section>
+
+    <!-- Featured Article -->
+    <section class="featured-article">
+        <div class="container">
+            <div class="featured-content">
+                <div class="featured-image">
+                    <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Featured travel destination">
+                    <div class="featured-badge">Featured</div>
+                </div>
+                <div class="featured-text">
+                    <div class="article-meta">
+                        <span class="category">Travel Tips</span>
+                        <span class="date">Recent</span>
+                    </div>
+                    <h2>The Ultimate Guide to Planning Your Dream Vacation</h2>
+                    <p>Planning the perfect vacation can be overwhelming, but with the right approach, you can create unforgettable memories. From choosing the right destination to packing efficiently, we've got you covered with expert tips and insider secrets.</p>
+                    <div class="article-stats">
+                        <span><i class="fas fa-eye"></i> 2,847 views</span>
+                        <span><i class="fas fa-heart"></i> 156 likes</span>
+                        <span><i class="fas fa-comment"></i> 23 comments</span>
+                    </div>
+                    <a href="article.html" class="btn btn-primary">Read More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Categories -->
+    <section class="blog-categories">
+        <div class="container">
+            <h2>Explore by Category</h2>
+            <div class="categories-grid">
+                <div class="category-card" onclick="filterByCategory('destinations')">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <h3>Destinations</h3>
+                    <p>Discover amazing places around the world</p>
+                </div>
+                <div class="category-card" onclick="filterByCategory('tips')">
+                    <i class="fas fa-lightbulb"></i>
+                    <h3>Travel Tips</h3>
+                    <p>Expert advice for better travel experiences</p>
+                </div>
+                <div class="category-card" onclick="filterByCategory('culture')">
+                    <i class="fas fa-globe"></i>
+                    <h3>Culture & History</h3>
+                    <p>Learn about local traditions and heritage</p>
+                </div>
+                <div class="category-card" onclick="filterByCategory('food')">
+                    <i class="fas fa-utensils"></i>
+                    <h3>Food & Dining</h3>
+                    <p>Culinary adventures and local cuisine</p>
+                </div>
+                <div class="category-card" onclick="filterByCategory('adventure')">
+                    <i class="fas fa-mountain"></i>
+                    <h3>Adventure Travel</h3>
+                    <p>Thrilling activities and outdoor experiences</p>
+                </div>
+                <div class="category-card" onclick="filterByCategory('budget')">
+                    <i class="fas fa-dollar-sign"></i>
+                    <h3>Budget Travel</h3>
+                    <p>Travel smart without breaking the bank</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Posts -->
+    <section class="blog-posts">
+        <div class="container">
+            <div class="posts-header">
+                <h2>Latest Articles</h2>
+                <div class="filter-controls">
+                    <select id="category-filter" onchange="filterPosts()">
+                        <option value="">All Categories</option>
+                        <option value="destinations">Destinations</option>
+                        <option value="tips">Travel Tips</option>
+                        <option value="culture">Culture & History</option>
+                        <option value="food">Food & Dining</option>
+                        <option value="adventure">Adventure Travel</option>
+                        <option value="budget">Budget Travel</option>
+                    </select>
+                    <select id="sort-filter" onchange="sortPosts()">
+                        <option value="newest">Newest First</option>
+                        <option value="oldest">Oldest First</option>
+                        <option value="popular">Most Popular</option>
+                        <option value="title">Title A-Z</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="posts-grid" id="posts-grid">
+                <!-- Blog posts will be loaded here -->
+            </div>
+            
+            <!-- Load More Button -->
+            <div class="load-more-container">
+                <button class="btn btn-secondary" onclick="loadMorePosts()" id="load-more-btn">
+                    <i class="fas fa-plus"></i>
+                    Load More Articles
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Signup -->
+    <section class="newsletter-section">
+        <div class="container">
+            <div class="newsletter-content">
+                <div class="newsletter-text">
+                    <h2>Stay Updated with Travel Insights</h2>
+                    <p>Get the latest travel guides, destination tips, and exclusive deals delivered to your inbox</p>
+                </div>
+                <form class="newsletter-form" id="newsletter-form">
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-paper-plane"></i>
+                        Subscribe
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>TravelEase</h3>
+                    <p>Making travel dreams come true since 2020</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="../index.html">Home</a></li>
+                        <li><a href="../search/search.html">Search</a></li>
+                        <li><a href="blog.html">Travel Guides</a></li>
+                        <li><a href="../contact/contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="../contact/contact.html">Help Center</a></li>
+                        <li><a href="../contact/contact.html">FAQ</a></li>
+                        <li><a href="../contact/contact.html">Terms of Service</a></li>
+                        <li><a href="../contact/contact.html">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 TravelEase. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/blog.js"></script>
+</body>
+</html>
