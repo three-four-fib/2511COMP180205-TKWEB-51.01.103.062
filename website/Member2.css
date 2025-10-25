@@ -1,0 +1,253 @@
+/* ========== 🩵 GLOBAL (Toàn trang) ========== */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(180deg, #0f0c29, #302b63, #24243e);
+  color: #f8f9fa;
+  min-height: 100vh;
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+/* ========== 🟣 NAVBAR ========== */
+nav {
+  background: rgba(15, 12, 41, 0.9);
+}
+.logo {
+  width: 40px;
+}
+nav a {
+  color: #e0e0ff !important;
+  font-weight: 500;
+}
+nav a:hover {
+  color: #a855f7 !important;
+}
+
+/* ==== Thanh tìm kiếm dạng biểu tượng ==== */
+.search-bar {
+  position: relative;
+}
+.search-bar input {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 1px solid #a855f7;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  padding: 0 40px 0 15px;
+  transition: all 0.4s ease;
+}
+.search-bar input:focus {
+  border-radius: 25px;
+  width: 220px;
+  outline: none;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 10px rgba(168, 85, 247, 0.6);
+}
+.search-bar button {
+  position: absolute;
+  right: 8px;
+  top: 6px;
+  border: none;
+  background: none;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.search-bar button:hover {
+  transform: scale(1.2);
+}
+
+/* ========== 🩶 HEADER ========== */
+header {
+  text-align: center;
+  padding: 80px 20px;
+}
+header h1 {
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: #e0e0ff;
+}
+header p {
+  color: #c7c7e9;
+}
+.highlight {
+  color: #a855f7;
+  font-weight: bold;
+}
+
+/* ========== 💜 HERO SECTION (Giới thiệu & Avatar) ========== */
+.hero-section {
+  padding-top: 120px;
+  padding-bottom: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+.avatar-img {
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  border: 4px solid #a855f7;
+  box-shadow: 0 0 30px rgba(168, 85, 247, 0.6);
+  object-fit: cover;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.avatar-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 45px rgba(168, 85, 247, 0.9);
+}
+
+/* ========== 💫 SECTIONS CHUNG ========== */
+section {
+  padding: 80px 0;
+}
+.card {
+  background: linear-gradient(145deg, #1f1b3a, #2d235a);
+  border: none;
+  color: #f0f0f0;
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.3);
+  border-radius: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 35px rgba(168, 85, 247, 0.6);
+}
+
+/* ========== 🎯 PLANS (Mục tiêu & TKB) ========== */
+#plans {
+  padding: 80px 0;
+}
+#plans h2 {
+  color: #e0e0ff;
+}
+#plans h3 {
+  font-weight: 600;
+  color: #a855f7;
+}
+#plans ul li {
+  margin-bottom: 10px;
+}
+#plans table {
+  background: rgba(31, 27, 58, 0.9);
+  border-radius: 10px;
+  overflow: hidden;
+}
+#plans table th {
+  background-color: #a855f7;
+  color: #fff;
+}
+
+/* ==== Bảng thời khóa biểu (Schedule) ==== */
+#plans table {
+  background: rgba(31, 27, 58, 0.95);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 25px rgba(168, 85, 247, 0.3);
+  font-size: 1.1rem;
+}
+
+#plans table th {
+  background-color: #a855f7;
+  color: #fff;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 18px;
+}
+
+#plans table td {
+  padding: 14px;
+  color: #f5e9ff;
+  font-weight: 500;
+}
+
+#plans table tr:hover {
+  background-color: rgba(168, 85, 247, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+body.light-mode #plans table {
+  background: #e6d1fb;
+  color: #2d2d2d;
+  box-shadow: 0 0 20px rgba(160, 83, 247, 0.2);
+}
+
+body.light-mode #plans table th {
+  background-color: #c26ef6;
+  color: #fff;
+}
+
+body.light-mode #plans table td {
+  color: #2d2d2d;
+}
+
+/* ========== 🪩 SỞ THÍCH (INTERESTS) ========== */
+#interestCarousel {
+  max-width: 480px;
+  aspect-ratio: 6 / 4;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(168, 85, 247, 0.3);
+  margin: 0 auto;
+}
+#interestCarousel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ========== 🌙 DARK & 🌞 LIGHT MODE ========== */
+body.light-mode {
+  background: linear-gradient(180deg, #c489ed, #c876e3, #4a249b);
+  color: #2d2d2d;
+}
+body.light-mode nav {
+  background: #d3a2f2;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+body.light-mode .card {
+  background: #c68af4;
+  color: #2d2d2d;
+  border: 1px solid #e0d7ff;
+}
+body.light-mode footer {
+  background: #a897eb;
+  color: #555;
+}
+body.dark-mode nav {
+  background: rgba(15, 12, 41, 0.9);
+}
+
+/* ========== 🔮 FOOTER ========== */
+footer {
+  text-align: center;
+  padding: 30px;
+  background: #0f0c29;
+  color: #aaa;
+  font-size: 0.9rem;
+}
+
+/* ========== ✨ ANIMATION ========== */
+.fade-in {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ========== 📱 RESPONSIVE ========== */
+@media (max-width: 768px) {
+  .hero-section {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
