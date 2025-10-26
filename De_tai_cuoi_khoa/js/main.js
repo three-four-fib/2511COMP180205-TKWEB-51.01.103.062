@@ -249,7 +249,7 @@ class TravelEase {
             {
                 id: 2,
                 name: "Tokyo, Japan",
-                image: "../images/Asia/japan/tokyo.jpg",
+                image: "images/Asia/Japan/tokyo.jpg",
                 description: "Experience the perfect blend of traditional culture and modern innovation.",
                 price: 1500,
                 rating: 4.9,
@@ -315,7 +315,7 @@ class TravelEase {
             {
                 id: 10,
                 name: "Sydney, Australia",
-                image: "../images/Oceania/Australia/australia.jpg",
+                image: "images/Oceania/Australia/australia.jpg",
                 description: "Iconic harbor, world-class beaches, and unique wildlife.",
                 price: 1600,
                 rating: 4.6,
@@ -326,7 +326,7 @@ class TravelEase {
             {
                 id: 11,
                 name: "South Island, New Zealand",
-                image: "../images/Oceania/New_Zealand/new_zealand.jpg",
+                image: "images/Oceania/New_Zealand/new_zealand.jpg",
                 description: "Stunning mountains, beautiful lakes, and scenic deep sea valley between tall cliffs.",
                 price: 1300,
                 rating: 4.6,
@@ -337,14 +337,26 @@ class TravelEase {
             {
                 id: 12,
                 name: "Viti Levu, Fiji",
-                image: "../images/Oceania/Fijis/fiji.jpg",
+                image: "images/Oceania/Fiji/fiji.jpg",
                 description: "Stunning mountains, beautiful lakes, and scenic deep sea valley between tall cliffs.",
                 price: 1300,
                 rating: 4.6,
                 duration: "8 days",
                 continent: "Oceania",
-                country: "New Zealand"
+                country: "Fiji"
+            },
+            {
+                id: 13,
+                name: "Lima, Peru",
+                image: "images/South America/Peru/peru.jpg",
+                description: "A vibrant coastal city known for its rich history, stunning architecture, and world-famous Peruvian cuisine. Explore ancient ruins, oceanfront cliffs, and lively local markets.",
+                price: 1300,
+                rating: 4.6,
+                duration: "8 days",
+                continent: "South America",
+                country: "Peru"
             }
+
         ];
     }
 

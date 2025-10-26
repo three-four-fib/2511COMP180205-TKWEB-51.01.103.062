@@ -155,10 +155,13 @@ class SearchManager {
         const discount = hasDiscount ? 
             Math.round(((item.originalPrice - item.price) / item.originalPrice) * 100) : 0;
 
+        // Adjust image path for search page (add ../ prefix for local images)
+        const imagePath = item.image.startsWith('images/') ? `../${item.image}` : item.image;
+
         return `
             <div class="result-card" onclick="viewDestination(${item.id})">
                 ${hasDiscount && discount > 0 ? `<div class="offer-badge">${discount}% OFF</div>` : ''}
-                <img src="${item.image}" alt="${item.name}">
+                <img src="${imagePath}" alt="${item.name}">
                 <div class="result-card-content">
                     <h3>${item.name}</h3>
                     <div class="location">

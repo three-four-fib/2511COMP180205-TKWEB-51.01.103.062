@@ -189,6 +189,11 @@ class DestinationManager {
                 '../images/Oceania/Fiji/fiji_1.png',
                 '../images/Oceania/Fiji/fiji_2.jpg',
                 '../images/Oceania/Fiji/fiji_3.jpg',
+            ],
+            13: [
+                '../images/South America/Peru/peru.jpg',
+                '../images/South America/Peru/peru_1.jpg',
+
             ]
         };
 

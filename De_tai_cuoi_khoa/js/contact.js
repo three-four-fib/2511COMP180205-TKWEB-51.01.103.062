@@ -282,38 +282,23 @@ class ContactManager {
 
     addBotResponse(userMessage) {
         const responses = this.getBotResponses(userMessage);
-        const randomResponse = responses[Math.floor(Math.random() * responses.length)];
-        this.addChatMessage(randomResponse, 'bot');
+        this.addChatMessage(responses, 'bot');
     }
 
     getBotResponses(userMessage) {
         const message = userMessage.toLowerCase();
 
-        if (message.includes('book') || message.includes('reserve')) {
+        if (message.includes('cancel') || message.includes('refund')) {
             return [
-                "I'd be happy to help you with your booking! You can browse our destinations and book directly on our website, or I can assist you with specific questions.",
-                "For booking assistance, you can use our search page to find your perfect destination, or tell me what you're looking for and I'll help you find the right option."
-            ];
-        } else if (message.includes('price') || message.includes('cost')) {
-            return [
-                "Our prices vary depending on the destination and package. You can see current prices on our search page, or I can help you find budget-friendly options.",
-                "All our prices are transparent with no hidden fees. Would you like me to help you find options within a specific budget?"
-            ];
-        } else if (message.includes('cancel') || message.includes('refund')) {
-            return [
-                "You can cancel your booking up to 24 hours before departure for a full refund. For cancellations within 24 hours, there's a 50% cancellation fee.",
-                "Our cancellation policy is very traveler-friendly. Would you like me to help you with a specific cancellation request?"
+                "You can cancel your booking in history page. For cancellations within 24 hours of arrival, there's a 50% cancellation fee."
             ];
         } else if (message.includes('help') || message.includes('support')) {
             return [
-                "I'm here to help! I can assist with bookings, answer questions about our services, or connect you with a human agent if needed.",
-                "How can I make your travel planning easier today? I can help with destinations, bookings, or any other questions you have."
+                "I'm here to help! I can assist with bookings, answer questions about our services, or connect you with a human agent if needed."
             ];
         } else {
             return [
-                "Thanks for your message! I'm here to help with any travel questions you have. How can I assist you today?",
-                "I'd be happy to help! You can ask me about our destinations, booking process, or any other travel-related questions.",
-                "Great question! I can help you find the perfect destination, assist with bookings, or answer any questions about our services."
+                "Thanks for your message! Our team will reach out to you soon."
             ];
         }
     }

@@ -91,7 +91,7 @@
 }
 
 .chat-btn {
-    background: #2c5aa0;
+    background: #204376;
     color: white;
     border: none;
     padding: 8px 16px;
@@ -106,7 +106,7 @@
 }
 
 .chat-btn:hover {
-    background: #1e3d6f;
+    background: #172a4d;
 }
 
 /* Social Card */
