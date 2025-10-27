@@ -194,6 +194,30 @@ class DestinationManager {
                 '../images/South America/Peru/peru.jpg',
                 '../images/South America/Peru/peru_1.jpg',
 
+            ],
+            14: [
+                '../images/Asia/Vietnam/Hanoi/hanoi_1.jpg',
+                '../images/Asia/Vietnam/Hanoi/hanoi_2.jpg',
+                '../images/Asia/Vietnam/Hanoi/hanoi_3.jpg',
+                '../images/Asia/Vietnam/Hanoi/hanoi_4.jpg',
+                '../images/Asia/Vietnam/Hanoi/hanoi_5.jpg',
+
+            ],
+            15: [
+                '../images/Asia/Vietnam/Quangninh/quangninh_1.jpg',
+                '../images/Asia/Vietnam/Quangninh/quangninh_2.jpg',
+                '../images/Asia/Vietnam/Quangninh/quangninh_3.jpg',
+                '../images/Asia/Vietnam/Quangninh/quangninh_4.jpg',
+                '../images/Asia/Vietnam/Quangninh/quangninh_5.jpg',
+
+            ],
+            16: [
+                '../images/Asia/Vietnam/Cantho/cantho_1.jpg',
+                '../images/Asia/Vietnam/Cantho/cantho_2.jpg',
+                '../images/Asia/Vietnam/Cantho/cantho_3.jpg',
+                '../images/Asia/Vietnam/Cantho/cantho_4.jpg',
+                '../images/Asia/Vietnam/Cantho/cantho.jpg',
+
             ]
         };
 

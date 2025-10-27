@@ -355,6 +355,39 @@ class TravelEase {
                 duration: "8 days",
                 continent: "South America",
                 country: "Peru"
+            },
+            {
+                id: 14,
+                name: "Hanoi, Vietnam",
+                image: "images/Asia/Vietnam/Hanoi/hanoi.jpg",
+                description: "Hanoi, the capital of Vietnam, is a city rich in history and culture. It blends ancient charm with modern life, featuring narrow streets, traditional temples, and bustling markets. The Old Quarter and Hoan Kiem Lake are among its most famous attractions.",
+                price: 1600,
+                rating: 4.8,
+                duration: "6 days",
+                continent: "Asia",
+                country: "Vietnam"
+            },
+            {
+                id: 15,
+                name: "Quang Ninh, Vietnam",
+                image: "images/Asia/Vietnam/Quangninh/quangninh.jpg",
+                description: "Ha Long Bay, located in Quang Ninh Province, is a UNESCO World Heritage Site known for its emerald waters and thousands of limestone islands. The stunning natural scenery makes it one of the most popular tourist destinations in Vietnam. Visitors can enjoy boat cruises, kayaking, and exploring mysterious caves.",
+                price: 1700,
+                rating: 4.9,
+                duration: "5 days",
+                continent: "Asia",
+                country: "Vietnam"
+            },
+            {
+                id: 16,
+                name: "Can Tho, Vietnam",
+                image: "images/Asia/Vietnam/Cantho/cantho.jpg",
+                description: "Can Tho is the largest city in the Mekong Delta, famous for its floating markets and fertile rice fields. It offers a peaceful countryside atmosphere and friendly local people. The Cai Rang Floating Market is a must-visit highlight for travelers.",
+                price: 1400,
+                rating: 4.7,
+                duration: "3 days",
+                continent: "Asia",
+                country: "Vietnam"
             }
 
         ];
