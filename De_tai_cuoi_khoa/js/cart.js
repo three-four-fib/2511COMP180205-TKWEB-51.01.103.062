@@ -81,7 +81,7 @@ class CartManager {
         return `
             <div class="cart-item" data-id="${item.id}">
                 <div class="cart-item-image">
-                    <img src="${item.image}" alt="${item.name}">
+                    <img src="${this.resolveImage(item.image)}" alt="${item.name}" onerror="this.onerror=null;this.src='../images/travel_guides.jpg';">
                 </div>
                 <div class="cart-item-details">
                     <div class="cart-item-title">${item.name}</div>
@@ -118,6 +118,11 @@ class CartManager {
                 </div>
             </div>
         `;
+    }
+
+    resolveImage(imagePath) {
+        if (typeof imagePath !== 'string') return imagePath;
+        return imagePath.startsWith('images/') ? `../${imagePath}` : imagePath;
     }
 
     getLocationFromName(name) {
