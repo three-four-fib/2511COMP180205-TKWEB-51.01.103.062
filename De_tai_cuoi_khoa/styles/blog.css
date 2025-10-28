@@ -1,7 +1,7 @@
 /* Blog Page Specific Styles */
 
 .blog-header {
-    background: url('.../images/articles.jpg');
+    background: url('../images/travel_guides.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
