@@ -292,21 +292,21 @@ class TravelEase {
         return [
             {
                 name: "Sarah Johnson",
-                image: "https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80",
+                image: "images/customer/1.jpeg",
                 text: "TravelEase made our honeymoon absolutely perfect. Every detail was taken care of, and we had the most amazing time in Santorini.",
                 rating: 5,
                 location: "New York, USA"
             },
             {
                 name: "Michael Chen",
-                image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80",
+                image: "images/customer/3.jpeg",
                 text: "The European Grand Tour exceeded all our expectations. Professional guides, comfortable accommodations, and unforgettable experiences.",
                 rating: 5,
                 location: "Toronto, Canada"
             },
             {
                 name: "Emma Rodriguez",
-                image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=100&q=80",
+                image: "images/customer/2.jpeg",
                 text: "I've traveled with many companies, but TravelEase stands out for their attention to detail and customer service. Highly recommended!",
                 rating: 5,
                 location: "London, UK"
