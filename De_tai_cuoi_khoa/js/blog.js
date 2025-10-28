@@ -303,9 +303,10 @@ function loadMorePosts() {
 }
 
 function viewPost(id) {
-    // In a real application, this would navigate to a specific blog post
-    // For now, we'll show an alert
-    alert(`Opening blog post with ID: ${id}\n\nIn a real application, this would navigate to the full article page.`);
+    try {
+        localStorage.setItem('selectedPostId', String(id));
+    } catch (e) {}
+    window.location.href = 'article.html';
 }
 
 // Initialize blog manager when DOM is loaded

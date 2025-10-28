@@ -6,6 +6,7 @@
     <title>Search Results - TravelEase</title>
     <link rel="stylesheet" href="../styles/main.css">
     <link rel="stylesheet" href="../styles/search.css">
+    <link rel="stylesheet" href="../styles/contact.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
@@ -49,10 +50,6 @@
                     <select id="continent-filter" onchange="updateCountryFilter()">
                         <option value="">All Continents</option>
                         <option value="Asia">Asia</option>
-                        <option value="Europe">Europe</option>
-                        <option value="Africa">Africa</option>
-                        <option value="North America">North America</option>
-                        <option value="South America">South America</option>
                         <option value="Oceania">Oceania</option>
                     </select>
                 </div>
@@ -99,15 +96,6 @@
                 </div>
                 
                 <div class="results-controls">
-                    <div class="view-toggle">
-                        <button class="view-btn active" onclick="toggleView('grid')">
-                            <i class="fas fa-th"></i>
-                        </button>
-                        <button class="view-btn" onclick="toggleView('list')">
-                            <i class="fas fa-list"></i>
-                        </button>
-                    </div>
-                    
                     <div class="sort-controls">
                         <label>Sort by:</label>
                         <select id="sort-select" onchange="sortResults()">
@@ -133,6 +121,42 @@
             </div>
         </div>
     </section>
+
+    <!-- Live Chat Widget -->
+    <div class="chat-widget" id="chat-widget">
+        <div class="chat-header">
+            <div class="chat-info">
+                <i class="fas fa-headset"></i>
+                <div>
+                    <h4>Live Support</h4>
+                    <span class="status online">Online</span>
+                </div>
+            </div>
+            <button class="chat-close" onclick="closeLiveChat()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="chat-messages" id="chat-messages">
+            <div class="message bot-message">
+                <div class="message-content">
+                    <p>Hello! How can we help you today?</p>
+                    <span class="message-time">Just now</span>
+                </div>
+            </div>
+        </div>
+        <div class="chat-input">
+            <input type="text" placeholder="Type your message..." id="chat-input-field">
+            <button onclick="sendMessage()">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Chat Toggle Button -->
+    <button class="chat-toggle" id="chat-toggle" onclick="toggleLiveChat()">
+        <i class="fas fa-comment-dots"></i>
+        <span>Chat with us</span>
+    </button>
 
     <!-- Footer -->
     <footer class="footer">
@@ -179,5 +203,6 @@
 
     <script src="../js/main.js"></script>
     <script src="../js/search.js"></script>
+    <script src="../js/contact.js"></script>
 </body>
 </html>

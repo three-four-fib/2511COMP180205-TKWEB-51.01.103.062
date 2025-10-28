@@ -1,7 +1,7 @@
 /* Blog Page Specific Styles */
 
 .blog-header {
-    background: url('../images/travel_guides.jpg');
+    background: url('.../images/articles.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -522,9 +522,29 @@
 
 /* Article Page Specific Styles */
 .article-header {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: url('../images/articles.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
     color: white;
     padding: 120px 0 60px;
+    position: relative; /* for overlay */
+}
+
+.article-header::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.45); /* dark overlay */
+}
+
+.article-header .container {
+    position: relative;
+    z-index: 1; /* above overlay */
 }
 
 .breadcrumb {
@@ -622,13 +642,23 @@
 
 .content-wrapper {
     display: grid;
-    grid-template-columns: 1fr 300px;
+    grid-template-columns: 1fr;
     gap: 4rem;
     align-items: start;
+    justify-items: center;
 }
 
 .main-content {
     max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* Keep lists left-aligned for readability, even when main content is centered */
+.main-content ul,
+.main-content ol,
+.main-content li {
+    text-align: left;
 }
 
 .featured-image {

@@ -10,10 +10,15 @@ class SearchManager {
     }
 
     init() {
-        this.loadSearchParams();
+        // Load data first, then apply saved filters so auto-filter works on redirect
         this.loadAllResults();
+        this.loadSearchParams();
         this.setupEventListeners();
-        this.displayResults();
+        // If no saved filters, show default results
+        if (!JSON.parse(localStorage.getItem('searchParams') || '{}').continent &&
+            !JSON.parse(localStorage.getItem('searchParams') || '{}').country) {
+            this.displayResults();
+        }
     }
 
     setupEventListeners() {
@@ -30,13 +35,31 @@ class SearchManager {
     loadSearchParams() {
         const searchParams = JSON.parse(localStorage.getItem('searchParams') || '{}');
         
-        if (searchParams.continent) {
-            document.getElementById('continent-filter').value = searchParams.continent;
+        const allowedContinents = ['Asia', 'Oceania'];
+        const continentSelect = document.getElementById('continent-filter');
+        const countrySelect = document.getElementById('country-filter');
+
+        if (searchParams.continent && continentSelect) {
+            continentSelect.value = allowedContinents.includes(searchParams.continent) ? searchParams.continent : '';
+            // Populate countries for selected continent
             this.updateCountryFilter();
         }
-        if (searchParams.country) {
-            document.getElementById('country-filter').value = searchParams.country;
+
+        if (searchParams.country && countrySelect) {
+            countrySelect.value = searchParams.country;
+            countrySelect.disabled = false;
         }
+
+        // Apply saved sort if present
+        if (searchParams.sortBy) {
+            const sortSelect = document.getElementById('sort-select');
+            if (sortSelect) {
+                sortSelect.value = searchParams.sortBy;
+            }
+        }
+
+        // Ensure filters are applied immediately using both continent and country
+        this.applyFilters();
     }
 
     loadAllResults() {
@@ -44,11 +67,14 @@ class SearchManager {
         const destinations = window.travelEase.getDestinations();
         const offers = window.travelEase.getOffers();
         
-        this.allResults = [
+        const combined = [
             ...destinations.map(item => ({ ...item, type: 'tour' })),
             ...offers.map(item => ({ ...item, type: 'tour' }))
         ];
         
+        // Keep only Asia and Oceania related data
+        const allowedContinents = new Set(['Asia', 'Oceania']);
+        this.allResults = combined.filter(item => allowedContinents.has(item.continent));
         this.filteredResults = [...this.allResults];
     }
 
@@ -86,11 +112,19 @@ class SearchManager {
         });
 
         this.currentPage = 1;
-        this.displayResults();
+        // Apply current sort before displaying
+        this.sortResults();
     }
 
     sortResults() {
         const sortBy = document.getElementById('sort-select').value;
+        // Persist user's sort selection for future navigations
+        try {
+            const searchParams = JSON.parse(localStorage.getItem('searchParams') || '{}');
+            searchParams.sortBy = sortBy;
+            localStorage.setItem('searchParams', JSON.stringify(searchParams));
+            localStorage.setItem('sortBy', sortBy);
+        } catch (e) {}
         
         this.filteredResults.sort((a, b) => {
             switch (sortBy) {

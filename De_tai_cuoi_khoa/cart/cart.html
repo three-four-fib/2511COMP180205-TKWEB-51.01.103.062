@@ -6,6 +6,7 @@
     <title>Shopping Cart - TravelEase</title>
     <link rel="stylesheet" href="../styles/main.css">
     <link rel="stylesheet" href="../styles/cart.css">
+    <link rel="stylesheet" href="../styles/contact.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
@@ -348,6 +349,42 @@
         </div>
     </div>
 
+    <!-- Live Chat Widget -->
+    <div class="chat-widget" id="chat-widget">
+        <div class="chat-header">
+            <div class="chat-info">
+                <i class="fas fa-headset"></i>
+                <div>
+                    <h4>Live Support</h4>
+                    <span class="status online">Online</span>
+                </div>
+            </div>
+            <button class="chat-close" onclick="closeLiveChat()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="chat-messages" id="chat-messages">
+            <div class="message bot-message">
+                <div class="message-content">
+                    <p>Hello! How can we help you today?</p>
+                    <span class="message-time">Just now</span>
+                </div>
+            </div>
+        </div>
+        <div class="chat-input">
+            <input type="text" placeholder="Type your message..." id="chat-input-field">
+            <button onclick="sendMessage()">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Chat Toggle Button -->
+    <button class="chat-toggle" id="chat-toggle" onclick="toggleLiveChat()">
+        <i class="fas fa-comment-dots"></i>
+        <span>Chat with us</span>
+    </button>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
@@ -392,5 +429,6 @@
 
     <script src="../js/main.js"></script>
     <script src="../js/cart.js"></script>
+    <script src="../js/contact.js"></script>
 </body>
 </html>

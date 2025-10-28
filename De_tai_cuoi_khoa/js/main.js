@@ -53,9 +53,11 @@ class TravelEase {
         const country = document.getElementById('country-select')?.value;
 
         // Store search parameters in localStorage
+        const sortBy = localStorage.getItem('sortBy') || 'relevance';
         const searchParams = {
             continent,
             country,
+            sortBy,
         };
 
         localStorage.setItem('searchParams', JSON.stringify(searchParams));
@@ -197,31 +199,7 @@ class TravelEase {
             "Asia": {
                 name: "Asia",
                 countries: [
-                    "Japan", "China", "Vietnam", "Singapore", "Taiwan"
-                ]
-            },
-            "Europe": {
-                name: "Europe", 
-                countries: [
-                    "France", "Italy", "Spain", "Ireland"
-                ]
-            },
-            "Africa": {
-                name: "Africa",
-                countries: [
-                    "Egypt", "Tanzania", "Tunisia",
-                ]
-            },
-            "North America": {
-                name: "North America",
-                countries: [
-                    "United States", "Canada", "Mexico", "Costa Rica",
-                ]
-            },
-            "South America": {
-                name: "South America", 
-                countries: [
-                    "Brazil", "Peru", "Venezuela",
+                    "Japan", "Vietnam"
                 ]
             },
             "Oceania": {
@@ -236,17 +214,6 @@ class TravelEase {
     getDestinations() {
         return [
             {
-                id: 1,
-                name: "Paris, France",
-                image: "images/Europe/France/paris.jpg",
-                description: "The City of Light awaits with its romantic charm and world-class attractions.",
-                price: 1200,
-                rating: 4.8,
-                duration: "7 days",
-                continent: "Europe",
-                country: "France"
-            },
-            {
                 id: 2,
                 name: "Tokyo, Japan",
                 image: "images/Asia/Japan/tokyo.jpg",
@@ -256,61 +223,6 @@ class TravelEase {
                 duration: "10 days",
                 continent: "Asia",
                 country: "Japan"
-            },
-            {
-                id: 3,
-                name: "Santorini, Greece",
-                image: "https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-                description: "Stunning sunsets, white-washed buildings, and crystal-clear waters.",
-                price: 1800,
-                rating: 4.7,
-                duration: "5 days",
-                continent: "Europe",
-                country: "Greece"
-            },
-            {
-                id: 4,
-                name: "Bali, Indonesia",
-                image: "https://images.unsplash.com/photo-1537953773345-d172ccf13cf1?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-                description: "Tropical paradise with lush landscapes and rich cultural heritage.",
-                price: 900,
-                rating: 4.6,
-                duration: "8 days",
-                continent: "Asia",
-                country: "Indonesia"
-            },
-            {
-                id: 7,
-                name: "Cape Town, South Africa",
-                image: "https://images.unsplash.com/photo-1580060839134-75a5edca2e99?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-                description: "Stunning landscapes, rich culture, and amazing wildlife experiences.",
-                price: 1100,
-                rating: 4.5,
-                duration: "9 days",
-                continent: "Africa",
-                country: "South Africa"
-            },
-            {
-                id: 8,
-                name: "New York, USA",
-                image: "https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-                description: "The city that never sleeps with endless attractions and experiences.",
-                price: 1300,
-                rating: 4.7,
-                duration: "6 days",
-                continent: "North America",
-                country: "United States"
-            },
-            {
-                id: 9,
-                name: "Rio de Janeiro, Brazil",
-                image: "https://images.unsplash.com/photo-1483729558449-99ef09a8c325?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-                description: "Vibrant culture, beautiful beaches, and the famous Carnival.",
-                price: 950,
-                rating: 4.4,
-                duration: "7 days",
-                continent: "South America",
-                country: "Brazil"
             },
             {
                 id: 10,
@@ -346,15 +258,15 @@ class TravelEase {
                 country: "Fiji"
             },
             {
-                id: 13,
-                name: "Lima, Peru",
-                image: "images/South America/Peru/peru.jpg",
-                description: "A vibrant coastal city known for its rich history, stunning architecture, and world-famous Peruvian cuisine. Explore ancient ruins, oceanfront cliffs, and lively local markets.",
+                id: 14,
+                name: "Hanoi, Vietnam",
+                image: "images/Asia/Vietnam/vietnam.jpg",
+                description: "Historic streets, serene lakes, and vibrant culture in Vietnam’s charming capital.",
                 price: 1300,
                 rating: 4.6,
                 duration: "8 days",
-                continent: "South America",
-                country: "Peru"
+                continent: "Asia",
+                country: "Vietnam"
             }
 
         ];
@@ -363,21 +275,10 @@ class TravelEase {
     getOffers() {
         return [
             {
-                id: 5,
-                name: "European Grand Tour",
-                image: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-                description: "Visit 5 countries in 14 days - Paris, Rome, Barcelona, Amsterdam, and Prague.",
-                price: 2500,
-                originalPrice: 3200,
-                rating: 4.9,
-                duration: "14 days",
-                badge: "25% OFF"
-            },
-            {
                 id: 6,
                 name: "Asian Adventure",
-                image: "https://images.unsplash.com/photo-1528127269322-539801943592?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80",
-                description: "Explore Thailand, Vietnam, and Cambodia in one amazing journey.",
+                image: "images/tours/Asia/asia.jpg",
+                description: "Explore Vietnam, Indonesia and China in one amazing journey.",
                 price: 1800,
                 originalPrice: 2200,
                 rating: 4.8,
@@ -439,11 +340,12 @@ function updateCountryOptions() {
     if (!continentSelect || !countrySelect) return;
     
     const selectedContinent = continentSelect.value;
+    const allowedContinents = new Set(['Asia', 'Oceania']);
     
     // Clear existing options
     countrySelect.innerHTML = '<option value="">Select Country</option>';
     
-    if (selectedContinent && window.travelEase) {
+    if (selectedContinent && allowedContinents.has(selectedContinent) && window.travelEase) {
         const continents = window.travelEase.getContinents();
         const countries = continents[selectedContinent]?.countries || [];
         

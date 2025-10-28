@@ -151,9 +151,10 @@ class DestinationManager {
             ],
             // Asian Adventure
             6: [
-                '../images/asia_tour.jpg',
-                '../images/asia_tour_1.jpg',
-                '../images/asia_tour_2.jpg',
+                '../images/tours/asia/asia.jpg',
+                '../images/tours/asia/asia_1.jpg',
+                '../images/tours/asia/asia_2.jpg',
+
             ],
             // Cape Town, South Africa
             7: [
@@ -193,6 +194,11 @@ class DestinationManager {
             13: [
                 '../images/South America/Peru/peru.jpg',
                 '../images/South America/Peru/peru_1.jpg',
+
+            ],
+            14: [
+                '../images/Asia/Vietnam/vietnam.jpg',
+                '../images/Asia/Vietnam/vietnam_1.png',
 
             ]
         };
@@ -534,16 +540,22 @@ class DestinationManager {
         const relatedPackages = this.getRelatedPackages();
         const relatedGrid = document.getElementById('related-grid');
         
-        relatedGrid.innerHTML = relatedPackages.map(pkg => `
+        relatedGrid.innerHTML = relatedPackages.map(pkg => {
+            // Normalize image path relative to destination page
+            const imagePath = (typeof pkg.image === 'string' && pkg.image.startsWith('images/'))
+                ? `../${pkg.image}`
+                : pkg.image;
+
+            return `
             <div class="related-card" onclick="viewDestination(${pkg.id})">
-                <img src="${pkg.image}" alt="${pkg.name}">
+                <img src="${imagePath}" alt="${pkg.name}" onerror="this.onerror=null;this.src='../images/travel_guides.jpg';">
                 <div class="related-card-content">
                     <h3>${pkg.name}</h3>
                     <p>${pkg.description}</p>
                     <div class="price">${window.travelEase.formatPrice(pkg.price)}</div>
                 </div>
-            </div>
-        `).join('');
+            </div>`;
+        }).join('');
     }
 
     getRelatedPackages() {

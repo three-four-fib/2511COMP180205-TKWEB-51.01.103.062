@@ -109,7 +109,7 @@ class HistoryManager {
                     <div class="items-list">
                         ${booking.items.map(item => `
                             <div class="booking-item">
-                                <img src="${item.image}" alt="${item.name}" class="item-image">
+                                <img src="${this.resolveImage(item.image)}" alt="${item.name}" class="item-image" onerror="this.onerror=null;this.src='../images/travel_guides.jpg';">
                                 <div class="item-details">
                                     <div class="item-name">${item.name}</div>
                                     <div class="item-location">
@@ -138,6 +138,11 @@ class HistoryManager {
                 </div>
             </div>
         `;
+    }
+
+    resolveImage(imagePath) {
+        if (typeof imagePath !== 'string') return imagePath;
+        return imagePath.startsWith('images/') ? `../${imagePath}` : imagePath;
     }
 
     getLocationFromName(name) {
@@ -250,7 +255,7 @@ class HistoryManager {
                 <h4>Travel Packages</h4>
                 ${booking.items.map(item => `
                     <div class="booking-item">
-                        <img src="${item.image}" alt="${item.name}" class="item-image">
+                        <img src="${this.resolveImage(item.image)}" alt="${item.name}" class="item-image" onerror="this.onerror=null;this.src='../images/travel_guides.jpg';">
                         <div class="item-details">
                             <div class="item-name">${item.name}</div>
                             <div class="item-location">
